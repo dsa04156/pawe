@@ -5,7 +5,7 @@ FROM eclipse-temurin:21-jdk
 WORKDIR /app
 
 # 빌드된 jar 파일 복사
-COPY /build/libs/*.jar app.jar
+COPY build/libs/*.jar app.jar
 
 COPY wasm/pawe_wasm.wasm /app/wasm/pawe_wasm.wasm
 
