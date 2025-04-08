@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-  # 또는 pull_request 등 원하는 트리거 조건에 맞게 설정 가능
 
 jobs:
   build:
@@ -18,7 +17,10 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
-          java-version: '21'
+          java-version: '17'
+
+      - name: Make gradlew executable
+        run: chmod +x gradlew
 
       - name: Build Spring Boot application
         run: ./gradlew clean build
